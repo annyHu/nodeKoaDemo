@@ -1,4 +1,6 @@
 var Koa = require('koa');
+
+
 var path = require('path')
 const render = require('koa-art-template');
 var Router = require('koa-router');
@@ -6,6 +8,7 @@ var index = require('./routes/index')
 
 var app = new Koa();
 var router = new Router();
+
 
 // 配置模板
 render(app, {
@@ -32,4 +35,4 @@ app
 .use(router.allowedMethods());
 
 // 监听端口
-app.listen(3000)
+app.listen(3000);

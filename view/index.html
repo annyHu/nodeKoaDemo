@@ -9,5 +9,8 @@
 <body>
   <div>art 模板</div>
   <p>{{title}}</p>
+  {{each list}}
+  <p>{{$value.name}}:{{$value.age}}</p>
+  {{/each}}
 </body>
 </html>
