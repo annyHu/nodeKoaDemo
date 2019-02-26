@@ -1,6 +1,4 @@
 var Koa = require('koa');
-
-
 var path = require('path')
 const render = require('koa-art-template');
 var Router = require('koa-router');
@@ -9,7 +7,11 @@ var index = require('./routes/index')
 var app = new Koa();
 var router = new Router();
 
-
+// 引入userModel 
+var UserModel = require('./mode/user')
+UserModel.find({}, (err, doc) => {
+  console.log(doc, '213')
+})
 // 配置模板
 render(app, {
   root: path.join(__dirname, 'view'), // 文件名
